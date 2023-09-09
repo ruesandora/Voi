@@ -68,6 +68,7 @@ goal node status
 # Hızlı sync olalım:
 goal node catchup $(curl -s https://testnet-api.voi.nodly.io/v2/status|jq -r '.["last-catchpoint"]') &&\
 echo OK
+# Burada bir kaç dakika bekleyelim
 
 # Yine status yapalım ama bu sefer loglarda Catchpoint göreceğiz:
 goal node status
