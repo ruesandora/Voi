@@ -82,7 +82,7 @@ goal node status -w 1000
 ```console
 # Cüzdan oluşturalım:
 goal wallet new voi
-# Şifre belirledikten sonra enter diyip 24 kelimenizi alıp saklayın.
+# Şifre belirledikten sonra Y diyip 24 kelimenizi alıp saklayın.
 
 # Şimdi cüzdanımızı node'umuza import edelim:
 goal account import
