@@ -1,25 +1,34 @@
-# Voi
+<h1 align="center">Voi</h1>
 
+> Bu repoda ki en önemli ve sağlıklı önerim komutları tek tek girmenizdir.
 
-> ubuntu 22.04 lazım 4 cpu 8 ram kurdum
+> Ayrıca kod blokları arasında bıraktığım notları okumanız SORUNSUZ kurulum yapmanıza neden olacak.
 
+<h1 align="center">Donanım ve Güncelleme</h1>
 
+```console
+# Dökümasyonda fazlası yazsada bu yeterlidir.
+4 CPU 8 RAM 80 SSD - Ubuntu 22.04
+```
+```console
 # Güncellemeler:
-sudo apt update && sudo apt-get upgrade -y && echo OK
-
+sudo apt update && sudo apt-get upgrade -y
 sudo systemctl start unattended-upgrades && sudo systemctl enable unattended-upgrades
+```
 
+<h1 align="center">Node Kurulumu</h1>
+
+```console
 # Hep Cosmos'u yükleyecek değiliz, Algorand'ı yüklüyoruz:
-
 sudo apt install -y jq gnupg2 curl software-properties-common
 curl -o - https://releases.algorand.com/key.pub | sudo tee /etc/apt/trusted.gpg.d/algorand.asc
 sudo add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ stable main"
-# Komutlar sonlanınca ENTER diyebilirsiniz.
+# Son komut çıktısına ENTER diyebilirsiniz.
 
 # Tekrar güncelleyelim ve node'un otomatik başlamaması için durduralım:
 sudo apt update && sudo apt install -y algorand && echo OK
 sudo systemctl stop algorand && sudo systemctl disable algorand && echo OK
-
+```
 # goal setup'ı yapalım
 echo -e "\nexport ALGORAND_DATA=/var/lib/algorand/" >> ~/.bashrc && source ~/.bashrc && echo OK
 sudo adduser $(whoami) algorand && echo OK
@@ -37,6 +46,8 @@ echo OK
 sudo curl -s -o /var/lib/algorand/genesis.json https://testnet-api.voi.nodly.io/genesis &&\
 sudo chown algorand:algorand /var/lib/algorand/genesis.json &&\
 echo OK
+
+<h1 align="center">Voi</h1>
 
 # Algorand'ı Voi olarak yapılandıralım:
 sudo cp /lib/systemd/system/algorand.service /etc/systemd/system/voi.service &&\
@@ -63,6 +74,8 @@ goal node status
 # Bu komutla kontrol ettiğimizde Sync Time'ın sıfırlanmasını ve loglarda Catchpoint'in gitmesini bekleyelim.
 goal node status -w 1000
 # Yukarda ki şartlar gerçekleince CTRL + C
+
+<h1 align="center">Voi</h1>
 
 # Cüzdan oluşturalım:
 goal wallet new voi
@@ -94,7 +107,7 @@ checkonline
 
 > Imported adresiniz ile [Explorer'dan](https://app.dappflow.org/dashboard/home) kontrol edin token gelince devam edin.
 
-
+<h1 align="center">Voi</h1>
 
 
 
