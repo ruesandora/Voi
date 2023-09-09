@@ -77,8 +77,9 @@ goal node status -w 1000
 # Yukarda ki şartlar gerçekleince CTRL + C
 ```
 
-<h1 align="center">Voi</h1>
+<h1 align="center">Cüzdan oluşturma işlemleri</h1>
 
+```console
 # Cüzdan oluşturalım:
 goal wallet new voi
 # Şifre belirledikten sonra enter diyip 24 kelimenizi alıp saklayın.
@@ -104,12 +105,13 @@ checkonline() {
   goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
 }
 checkonline
+```
 
 > Bu aşamadan sonrasına devam etmek için [Buradan](https://docs.google.com/forms/d/e/1FAIpQLSehNL0nNP0mtIXK5j615vxQtzz6QQpYUKHTVN4irN6YpHjXfg/viewform) Formu doldurarak token alın.
 
 > Imported adresiniz ile [Explorer'dan](https://app.dappflow.org/dashboard/home) kontrol edin token gelince devam edin.
 
-<h1 align="center">Voi</h1>
+
 
 
 
