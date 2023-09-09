@@ -28,13 +28,12 @@ sudo add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ sta
 # Tekrar güncelleyelim ve node'un otomatik başlamaması için durduralım:
 sudo apt update && sudo apt install -y algorand && echo OK
 sudo systemctl stop algorand && sudo systemctl disable algorand && echo OK
-```
+
 # goal setup'ı yapalım
 echo -e "\nexport ALGORAND_DATA=/var/lib/algorand/" >> ~/.bashrc && source ~/.bashrc && echo OK
 sudo adduser $(whoami) algorand && echo OK
 
 # yapılandırma işlem:
-
 sudo algocfg set -p DNSBootstrapID -v "<network>.voi.network" -d /var/lib/algorand/ &&\
 sudo algocfg set -p GossipFanout -v 8 -d /var/lib/algorand/ &&\
 sudo algocfg set -p EnableCatchupFromArchiveServers -v true -d /var/lib/algorand/ &&\
@@ -46,10 +45,12 @@ echo OK
 sudo curl -s -o /var/lib/algorand/genesis.json https://testnet-api.voi.nodly.io/genesis &&\
 sudo chown algorand:algorand /var/lib/algorand/genesis.json &&\
 echo OK
+```
 
-<h1 align="center">Voi</h1>
+<h1 align="center">Node'u çalıştıralım</h1>
 
-# Algorand'ı Voi olarak yapılandıralım:
+```console
+# Algorandı Voi olarak yapılandıralım:
 sudo cp /lib/systemd/system/algorand.service /etc/systemd/system/voi.service &&\
 sudo sed -i 's/Algorand daemon/Voi daemon/g' /etc/systemd/system/voi.service &&\
 echo OK
@@ -74,6 +75,7 @@ goal node status
 # Bu komutla kontrol ettiğimizde Sync Time'ın sıfırlanmasını ve loglarda Catchpoint'in gitmesini bekleyelim.
 goal node status -w 1000
 # Yukarda ki şartlar gerçekleince CTRL + C
+```
 
 <h1 align="center">Voi</h1>
 
