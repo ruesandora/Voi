@@ -112,13 +112,22 @@ checkonline
 
 > Imported adresiniz ile [Explorer'dan](https://app.dappflow.org/setup-config?name=Voi%20testnet&algod_url=https://testnet-api.voi.nodly.io&indexer_url=https://testnet-idx.voi.nodly.io&redirect=/explorer) kontrol edin token gelince devam edin.
 
+```console
+# Tokenimizi aldıysak bu komutla Online olalım
+getaddress() {
+  if [ "$addr" == "" ]; then echo -ne "\nEnter your voi address: " && read addr; else echo ""; fi
+}
+getaddress &&\
+goal account changeonlinestatus -a $addr -o=1 &&\
+sleep 1 &&\
+goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
+```
 
+![image](https://github.com/ruesandora/Voi/assets/101149671/b127d662-bb0b-4d70-8d78-438ec99e7b24)
 
+> Node kurduktan 1-2 gün sonra #VoiScout-testnet kanalında cüzdanınızın ilk 5 hanesini search edin.
 
-
-
-
-
+> Zaten online iseniz doğru ama ek olarak burda gözüküyorsa prop execute etmişsiniz demektir.
 
 
 
