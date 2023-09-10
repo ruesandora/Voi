@@ -112,6 +112,8 @@ checkonline
 
 > Imported adresiniz ile [Explorer'dan](https://app.dappflow.org/setup-config?name=Voi%20testnet&algod_url=https://testnet-api.voi.nodly.io&indexer_url=https://testnet-idx.voi.nodly.io&redirect=/explorer) kontrol edin token gelince devam edin.
 
+<h1 align="center">Token Aldıktan Sonra</h1>
+
 ```console
 # Tokenimizi aldıysak bu komutla Online olalım
 getaddress() {
