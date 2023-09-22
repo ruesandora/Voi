@@ -158,8 +158,8 @@ goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "
 
 <h1 align="center">Node kurduktan sonra yapılacaklar</h1>
 
-> Node kurduktan 1-2 gün sonra #VoiScout-testnet kanalında cüzdanınızın ilk 5 hanesini search edin.
+> Node kurduktan `1-2 gün` sonra `#VoiScout-testnet` kanalında cüzdanınızın ilk 5 hanesini search edin.
 
-> Zaten online iseniz doğru ama ek olarak burda gözüküyorsa prop execute etmişsiniz demektir.
+> Zaten `online` iseniz doğru ama ek olarak burda gözüküyorsa prop execute etmişsiniz demektir. (iyi bir şey, node calısmıyor anlamına gelmez)
 
-> [Buradan](https://cswenor.github.io/voi-proposer-data/health.html) kendimizi kontrol edelim (Hour)
+> [Buradan](https://cswenor.github.io/voi-proposer-data/health.html) kendimizi kontrol edelim (`Hour`)
