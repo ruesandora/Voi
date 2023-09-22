@@ -1,13 +1,15 @@
 <h1 align="center">Voi</h1>
 
-> Bu repoda ki en önemli ve sağlıklı önerim komutları tek tek girmenizdir.
+> Adım adım gittiğiniz taktirde sorunsuz bir kurulum olacaktır.
 
 > Ayrıca kod blokları arasında bıraktığım notları okumanız SORUNSUZ kurulum yapmanıza neden olacak.
+
+> Whitepaper
 
 <h1 align="center">Donanım ve Güncelleme</h1>
 
 ```console
-# Dökümasyonda fazlası yazsada bu yeterlidir.
+# Dökümasyonda fazlası yazsada bu yeterlidir. !!(Ubuntu 20.04e kurdum)!!
 4 CPU 8 RAM 80 SSD - Ubuntu 22.04
 # Benim Tavsiyem Ar-io nodeunuzun yanına kurmanız, ben öyle yaptım ayrı sunucu satın almadım.
 # Ar-io yok diyorsanız başka node olur, ayrı sunucuya gerek yok şimdilik.
