@@ -131,7 +131,7 @@ checkonline
 <h1 align="center">Token Aldıktan Sonra</h1>
 
 ```console
-# Tokenimizi aldıysak bu komutla Online olalım
+# Tokenimizi aldıysak bu komutla !!Online olalım!!
 getaddress() {
   if [ "$addr" == "" ]; then echo -ne "\nEnter your voi address: " && read addr; else echo ""; fi
 }
