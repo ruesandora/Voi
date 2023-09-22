@@ -9,6 +9,8 @@
 ```console
 # Dökümasyonda fazlası yazsada bu yeterlidir.
 4 CPU 8 RAM 80 SSD - Ubuntu 22.04
+# Benim Tavsiyem Ar-io node'unuzun yanına kurmanız, ben öyle yaptım ayrı sunucu satın almadım.
+# Ar-io yok diyorsanız başka node olur, ayrı sunucuya gerek yok şimdilik.
 ```
 ```console
 # Güncellemeler:
@@ -22,8 +24,9 @@ sudo systemctl start unattended-upgrades && sudo systemctl enable unattended-upg
 # Hep Cosmos'u yükleyecek değiliz, Algorand'ı yüklüyoruz:
 sudo apt install -y jq gnupg2 curl software-properties-common
 curl -o - https://releases.algorand.com/key.pub | sudo tee /etc/apt/trusted.gpg.d/algorand.asc
+
+# Çıktısına ENTER diyebilirsiniz.
 sudo add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ stable main"
-# Son komut çıktısına ENTER diyebilirsiniz.
 
 # Tekrar güncelleyelim ve node'un otomatik başlamaması için durduralım:
 sudo apt update && sudo apt install -y algorand && echo OK
@@ -78,6 +81,16 @@ goal node status -w 1000
 # Yukarda ki şartlar gerçekleince CTRL + C
 ```
 
+<h1 align="center">Ödül alabilmek için Telemtry yapalım</h1>
+
+```console
+# RuesTest yazan kısmı düzenleyiniz ve tırnakları <> kaldırın
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n <RuesTest>
+
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
+sudo systemctl restart voi
+```
+
 <h1 align="center">Cüzdan oluşturma işlemleri</h1>
 
 ```console
@@ -85,11 +98,12 @@ goal node status -w 1000
 goal wallet new voi
 # Şifre belirledikten sonra Y diyip 24 kelimenizi alıp saklayın.
 
-# Şimdi cüzdanımızı node'umuza import edelim:
+# Şimdi cüzdanımızı nodeumuza import edelim:
 goal account import
 # Şifre ve 24 kelimeyi girince bize bir Imported adres verecek bunu saklayalım cüzdan adresimiz.
 
 # Şimdi bu kodları girelim ve bizden Imported adresimizi isteyecek.
+# 1 Kerede kopyala yapıştır yapabilirsiniz bu kodu
 echo -ne "\nEnter your voi address: " && read addr &&\
 echo -ne "\nEnter duration in rounds [press ENTER to accept default (2M)]: " && read duration &&\
 start=$(goal node status | grep "Last committed block:" | cut -d\  -f4) &&\
@@ -100,7 +114,7 @@ goal account addpartkey -a $addr --roundFirstValid $start --roundLastValid $end 
 # Imported adresinden sonra ki soruda ENTER diyip varsayılanı tercih edebiliriz.
 # Import işleminin tamamlanmasını bekleyin ve Participation ID'inizi saklayın.
 
-# Aktifliğimize bakalım, burada çıktı OFFLİNE OLMALI!
+# Aktifliğimize bakalım, burada çıktı !!OFFLİNE OLMALI!!
 checkonline() {
   if [ "$addr" == "" ]; then echo -ne "\nEnter your voi address: " && read addr; else echo ""; fi
   goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
@@ -110,7 +124,9 @@ checkonline
 
 > Bu aşamadan sonrasına devam etmek için [Buradan](https://docs.google.com/forms/d/e/1FAIpQLSehNL0nNP0mtIXK5j615vxQtzz6QQpYUKHTVN4irN6YpHjXfg/viewform) Formu doldurarak token alın.
 
-> Imported adresiniz ile [Explorer'dan](https://app.dappflow.org/setup-config?name=Voi%20testnet&algod_url=https://testnet-api.voi.nodly.io&indexer_url=https://testnet-idx.voi.nodly.io&redirect=/explorer) kontrol edin token gelince devam edin.
+> Imported adresiniz ile [Explorer'dan](https://voi.observer/explorer/home) kontrol edin token gelince devam edin.
+
+> Formu doldurktan sonra ekibe yazarsanız hızlı token atarlar. (hali hazırda yazan varsa darlamayın :=)
 
 <h1 align="center">Token Aldıktan Sonra</h1>
 
@@ -127,9 +143,10 @@ goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "
 
 ![image](https://github.com/ruesandora/Voi/assets/101149671/b127d662-bb0b-4d70-8d78-438ec99e7b24)
 
+Node kurduktan sonra yapılacaklar
+
 > Node kurduktan 1-2 gün sonra #VoiScout-testnet kanalında cüzdanınızın ilk 5 hanesini search edin.
 
 > Zaten online iseniz doğru ama ek olarak burda gözüküyorsa prop execute etmişsiniz demektir.
 
-
-
+> [Buradan](https://cswenor.github.io/voi-proposer-data/health.html) kendimizi kontrol edelim (Hour)
