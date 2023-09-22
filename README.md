@@ -50,7 +50,6 @@ sudo adduser $(whoami) algorand && echo OK
 
 # yapılandırma işlem:
 sudo algocfg set -p DNSBootstrapID -v "<network>.voi.network" -d /var/lib/algorand/ &&\
-sudo algocfg set -p GossipFanout -v 8 -d /var/lib/algorand/ &&\
 sudo algocfg set -p EnableCatchupFromArchiveServers -v true -d /var/lib/algorand/ &&\
 sudo chown algorand:algorand /var/lib/algorand/config.json &&\
 sudo chmod g+w /var/lib/algorand/config.json &&\
