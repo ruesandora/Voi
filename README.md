@@ -97,7 +97,7 @@ goal node status -w 1000
 
 ```console
 # RuesTest yazan kısmı düzenleyiniz ve tırnakları <> kaldırın
-sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n <RuesTest>
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n <RuesTest> | RuesCommunity
 
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
