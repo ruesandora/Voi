@@ -153,7 +153,7 @@ sleep 1 &&\
 goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
 ```
 
-![image](https://github.com/ruesandora/Voi/assets/101149671/b127d662-bb0b-4d70-8d78-438ec99e7b24)
+![image](https://github.com/ruesandora/Voi/assets/101149671/6b030e34-9619-4191-a136-6312f94ba7cb)
 
 
 <h1 align="center">Node kurduktan sonra yapılacaklar</h1>
