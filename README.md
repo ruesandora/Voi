@@ -9,7 +9,7 @@
 ```console
 # Dökümasyonda fazlası yazsada bu yeterlidir.
 4 CPU 8 RAM 80 SSD - Ubuntu 22.04
-# Benim Tavsiyem Ar-io node'unuzun yanına kurmanız, ben öyle yaptım ayrı sunucu satın almadım.
+# Benim Tavsiyem Ar-io nodeunuzun yanına kurmanız, ben öyle yaptım ayrı sunucu satın almadım.
 # Ar-io yok diyorsanız başka node olur, ayrı sunucuya gerek yok şimdilik.
 ```
 ```console
@@ -21,18 +21,18 @@ sudo systemctl start unattended-upgrades && sudo systemctl enable unattended-upg
 <h1 align="center">Node Kurulumu</h1>
 
 ```console
-# Hep Cosmos'u yükleyecek değiliz, Algorand'ı yüklüyoruz:
+# Hep Cosmosu yükleyecek değiliz, Algorandı yüklüyoruz:
 sudo apt install -y jq gnupg2 curl software-properties-common
 curl -o - https://releases.algorand.com/key.pub | sudo tee /etc/apt/trusted.gpg.d/algorand.asc
 
 # Çıktısına ENTER diyebilirsiniz.
 sudo add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ stable main"
 
-# Tekrar güncelleyelim ve node'un otomatik başlamaması için durduralım:
+# Tekrar güncelleyelim ve nodeun otomatik başlamaması için durduralım:
 sudo apt update && sudo apt install -y algorand && echo OK
 sudo systemctl stop algorand && sudo systemctl disable algorand && echo OK
 
-# goal setup'ı yapalım
+# goal setupı yapalım
 echo -e "\nexport ALGORAND_DATA=/var/lib/algorand/" >> ~/.bashrc && source ~/.bashrc && echo OK
 sudo adduser $(whoami) algorand && echo OK
 
@@ -50,7 +50,7 @@ sudo chown algorand:algorand /var/lib/algorand/genesis.json &&\
 echo OK
 ```
 
-<h1 align="center">Node'u çalıştıralım</h1>
+<h1 align="center">Nodeu çalıştıralım</h1>
 
 ```console
 # Algorandı Voi olarak yapılandıralım:
@@ -58,10 +58,10 @@ sudo cp /lib/systemd/system/algorand.service /etc/systemd/system/voi.service &&\
 sudo sed -i 's/Algorand daemon/Voi daemon/g' /etc/systemd/system/voi.service &&\
 echo OK
 
-# ve node'u çalıştralım:
+# ve nodeu çalıştralım:
 sudo systemctl start voi && sudo systemctl enable voi && echo OK
 
-# node'u kontrrol edelim status ile:
+# nodeu kontrrol edelim status ile:
 goal node status
 
 # ==> Genesis ID: voitest-v1
@@ -76,7 +76,7 @@ echo OK
 # Yine status yapalım ama bu sefer loglarda Catchpoint göreceğiz:
 goal node status
 
-# Bu komutla kontrol ettiğimizde Sync Time'ın sıfırlanmasını ve loglarda Catchpoint'in gitmesini bekleyelim.
+# Bu komutla kontrol ettiğimizde Sync Timeın sıfırlanmasını ve loglarda Catchpointin gitmesini bekleyelim.
 goal node status -w 1000
 # Yukarda ki şartlar gerçekleince CTRL + C
 ```
@@ -112,7 +112,7 @@ end=$((start + duration)) &&\
 dilution=$(echo "sqrt($end - $start)" | bc) &&\
 goal account addpartkey -a $addr --roundFirstValid $start --roundLastValid $end --keyDilution $dilution
 # Imported adresinden sonra ki soruda ENTER diyip varsayılanı tercih edebiliriz.
-# Import işleminin tamamlanmasını bekleyin ve Participation ID'inizi saklayın.
+# Import işleminin tamamlanmasını bekleyin ve Participation IDinizi saklayın.
 
 # Aktifliğimize bakalım, burada çıktı !!OFFLİNE OLMALI!!
 checkonline() {
@@ -124,7 +124,7 @@ checkonline
 
 > Bu aşamadan sonrasına devam etmek için [Buradan](https://docs.google.com/forms/d/e/1FAIpQLSehNL0nNP0mtIXK5j615vxQtzz6QQpYUKHTVN4irN6YpHjXfg/viewform) Formu doldurarak token alın.
 
-> Imported adresiniz ile [Explorer'dan](https://voi.observer/explorer/home) kontrol edin token gelince devam edin.
+> Imported adresiniz ile [Explorerdan](https://voi.observer/explorer/home) kontrol edin token gelince devam edin.
 
 > Formu doldurktan sonra ekibe yazarsanız hızlı token atarlar. (hali hazırda yazan varsa darlamayın :=)
 
