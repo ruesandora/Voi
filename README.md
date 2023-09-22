@@ -1,10 +1,20 @@
-<h1 align="center">Voi</h1>
+<h1 align="center">Voi Network</h1>
 
-> Adım adım gittiğiniz taktirde sorunsuz bir kurulum olacaktır.
+> Adım adım gittiğiniz taktirde `sorunsuz` bir kurulum olacaktır.
 
-> Ayrıca kod blokları arasında bıraktığım notları okumanız SORUNSUZ kurulum yapmanıza neden olacak.
+> Ayrıca kod blokları arasında bıraktığım `notları` okumanız `SORUNSUZ` kurulum yapmanıza neden olacak.
 
-> Whitepaper
+#
+
+> Testnette elde edilen `tüm tokenler` mainnette `ödül olarak` verilir, yani talep ettiğiniz test tokenler bile `önemli`
+
+> Şu an pek fazla test token elde edmiyoruz, `2 Ekimden` itibaren block proposals edilecek. İsteyen o zaman kurabilir.
+
+> Testnet `3 aşamadan` totalde `3 ay` (`minimum`, zamana göre değişebilir) süreceğini belirttiler.
+
+#
+
+> ÖNEMLİ LİNKLER: [Duyuru](https://t.me/RuesAnnouncement) - [Chat](https://t.me/RuesChat) - [Discord](https://discord.gg/t7qVBD6m) - [Whitepaper](https://afaf83a4-6c33-4e2a-a40c-9999410c0063.filesusr.com/ugd/7dc173_8e16834f2fbd4866a957d441f392d578.pdf)
 
 <h1 align="center">Donanım ve Güncelleme</h1>
 
@@ -145,7 +155,8 @@ goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "
 
 ![image](https://github.com/ruesandora/Voi/assets/101149671/b127d662-bb0b-4d70-8d78-438ec99e7b24)
 
-Node kurduktan sonra yapılacaklar
+
+<h1 align="center">Node kurduktan sonra yapılacaklar</h1>
 
 > Node kurduktan 1-2 gün sonra #VoiScout-testnet kanalında cüzdanınızın ilk 5 hanesini search edin.
 
