@@ -134,11 +134,9 @@ checkonline() {
 checkonline
 ```
 
-> Bu aşamadan sonrasına devam etmek için [Buradan](https://docs.google.com/forms/d/e/1FAIpQLSehNL0nNP0mtIXK5j615vxQtzz6QQpYUKHTVN4irN6YpHjXfg/viewform) Formu doldurarak token alın.
+> Bu aşamadan sonrasına devam etmek için discorddan token alın. `node-runners kanalı` => `/voi-testnet-faucet` şeklinde.
 
 > Imported adresiniz ile [Explorerdan](https://voi.observer/explorer/home) kontrol edin token gelince devam edin.
-
-> Formu doldurktan sonra ekibe yazarsanız hızlı token atarlar. (hali hazırda yazan varsa darlamayın :=)
 
 <h1 align="center">Token Aldıktan Sonra</h1>
 
