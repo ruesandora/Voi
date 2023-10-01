@@ -24,6 +24,11 @@
 # Benim Tavsiyem Ar-io nodeunuzun yanına kurmanız, ben öyle yaptım ayrı sunucu satın almadım.
 # Ar-io yok diyorsanız başka node olur, ayrı sunucuya gerek yok şimdilik.
 ```
+
+> Lokasyon olarak kabaca görselde gösterdiğim lokasyonda yer alırsanız üst sıralarda olup daha fazla ödül alabilirsiniz;
+
+![image](https://github.com/ruesandora/Voi/assets/101149671/a4acf712-b470-4ce7-bfb2-7bff3d47580e)
+
 ```console
 # Güncellemeler:
 sudo apt update && sudo apt-get upgrade -y
